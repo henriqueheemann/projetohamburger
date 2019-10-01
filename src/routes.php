@@ -9,12 +9,16 @@ return function (App $app) {
 
     $app->get('/[{nome}]', function (Request $request, Response $response, array $args) use ($container) {
         // Sample log message
-        $container->get('logger')->info("Slim-Skeleton '/' route");
+        $container->get('logger')->info("Slim-Skeleton '/cadastro' route");
 
         $conexao = $container->get('pdo');
-
-        $resultSet = $conexao->query('SELECT * from cadastro WHERE nome = "' .$args['nome'] . '"')->fetchAll();
-
+        
+        if(!isset($args['nome'])){
+            $resultSet = $conexao->query('SELECT * from cadastro')->fetchAll();
+        } else {
+            $resultSet = $conexao->query('SELECT * from cadastro WHERE nome = "' . $args['nome'] . '"')->fetchAll();
+        }
+        
         $args['cadastro'] = $resultSet;
         
 

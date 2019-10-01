@@ -29,5 +29,8 @@ $middleware($app);
 $routes = require __DIR__ . '/../src/routes.php';
 $routes($app);
 
+$routes = require __DIR__ . '/../src/routesProdutos.php';
+$routes($app);
+
 // Run app
 $app->run();
