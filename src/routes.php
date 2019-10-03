@@ -1,4 +1,3 @@
-
 <?php
 use Slim\App;
 use Slim\Http\Request;

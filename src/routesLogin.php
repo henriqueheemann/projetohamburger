@@ -22,8 +22,8 @@ return function (App $app) {
             return $response->withRedirect('/'); 
         } else {
             echo "ACESSO NEGADO";
-            exit;
         }
+        exit;
         // Render index view
         return $container->get('renderer')->render($response, 'login.phtml', $args);
     });
