@@ -29,7 +29,7 @@ $middleware($app);
 $routes = require __DIR__ . '/../src/routes.php';
 $routes($app);
 
-$routes = require __DIR__ . '/../src/routesProdutos.php';
+$routes = require __DIR__ . '/../src/routesLogin.php';
 $routes($app);
 
 // Run app

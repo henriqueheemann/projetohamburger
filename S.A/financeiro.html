@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Financeiro</title>
+    <link rel="shortcut icon" href="gym.png">
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="vendor/fontawesome/css/solid.min.css">
+    <link rel="stylesheet" href="background.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark rounded-bottom">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand text-white" href="inicio.html"><img src="gym.png" class="mr-3" width="30" height="30"
+            alt="">Acadmia do Borel</a>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="inicio.html">Início</a>
+                <a class="nav-item nav-link" href="suplemento.html">Suplementos</a>
+                <a class="nav-item active nav-link" href="financeiro.html">Financeiro</a>
+                <a class="nav-item nav-link" href="ajuda.html">Ajuda</a>
+                <a class="nav-item nav-link" href="desafio.html">Desafios</a>
+                <a class="nav-item nav-link" href="meta.html">Metas</a>
+                <a class="nav-item nav-link" href="agendar_consulta.html">Consultas</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container text-white">
+        <div class="m-5">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="inicio.html">Início</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Financeiro</li>
+                </ol>
+            </nav>
+        </div>
+        <div class="col-12">
+            <div class="row">
+                <div class="col-md-2 border border-primary text-center">
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                    <input type="file" id="imgload">
+                    <img src="#" id="imgshow">
+                    <p>Nome do usuário</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 mt-4">
+            <div class="row">
+                <div class="col-8 col-md-3 offset-md-3 border rounded border-white text-right p-3">
+                    <p>Plano VIP da Academia</p>
+                    <p>Personal Trainer</p>
+                    <p>Whey 2Kg</p>
+                    <hr class="bg-white">
+                    <p>Total:</p>
+                </div>
+                <div class="col-4 col-md-3 border rounded border-white float-left p-3">
+                    <p>R$230,00</p>
+                    <p>R$170,50</p>
+                    <p>R$200,00</p>
+                    <hr class="bg-white">
+                    <p>R$600,50</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="row">
+                <button type="submit" class="ml-2 btn btn-light text-center mt-5 mb-5">Pagar</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="imgload.js"></script>
+<script src="vendor/jquery/jquery-3.4.1.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</html>
