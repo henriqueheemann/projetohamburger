@@ -27,4 +27,6 @@ return function (App $app) {
             echo "ACESSO NEGADO";
             exit;
         }
+        return $container->get('renderer')->render($response, 'login.phtml', $args);
+    });
 };
