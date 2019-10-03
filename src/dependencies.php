@@ -23,7 +23,7 @@ return function (App $app) {
     $container['pdo'] = function ($c) {
         // better load the settings with $container->get('settings')
         $host = '127.0.0.1';
-        $dbname = 'sa';
+        $dbname = 'projetoacadmia';
         $username = 'root';
         $password = '';
         $charset = 'utf8';
@@ -36,7 +36,7 @@ return function (App $app) {
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
             PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES $charset COLLATE $collate"
         ];
-    
+
         return new PDO($dsn, $username, $password, $options);
     };
 };
