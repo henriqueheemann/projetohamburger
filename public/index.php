@@ -25,10 +25,6 @@ $dependencies($app);
 $middleware = require __DIR__ . '/../src/middleware.php';
 $middleware($app);
 
-// Register routes
-$routes = require __DIR__ . '/../src/routes.php';
-$routes($app);
-
 $routes = require __DIR__ . '/../src/routesLogin.php';
 $routes($app);
 
