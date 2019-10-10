@@ -9,7 +9,6 @@ if (PHP_SAPI == 'cli-server') {
     }
 }
 
-
 session_start();
 
 // Instantiate the app
