@@ -7,22 +7,33 @@ use Slim\Http\Response;
 return function (App $app) {
     $container = $app->getContainer();
 
-    $app->get('/[{nome}]', function (Request $request, Response $response, array $args) use ($container) {
-        // Sample log message
-        $container->get('logger')->info("Slim-Skeleton '/cadastro' route");
+    $app->get('/[{name}]', function (Request $request, Response $response, array $args) use ($container) {
 
-        $conexao = $container->get('pdo');
-        
-        if(!isset($args['nome'])){
-            $resultSet = $conexao->query('SELECT * from cadastro')->fetchAll();
-        } else {
-            $resultSet = $conexao->query('SELECT * from cadastro WHERE nome = "' . $args['nome'] . '"')->fetchAll();
+        if ($_SESSION['login']['ehLogado'] != true) {
+            return $response->withRedirect('/login/');
+            exit;
         }
-        
-        $args['cadastro'] = $resultSet;
-        
+
+        // Sample log message
+        $container->get('logger')->info("Slim-Skeleton '/' route");
+
 
         // Render index view
         return $container->get('renderer')->render($response, 'index.phtml', $args);
+    });
+
+    $app->get('/cardapio/', function (Request $request, Response $response, array $args) use ($container) {
+        
+        if ($_SESSION['login']['ehLogado'] != true) {
+            return $response->withRedirect('/login/');
+            exit;
+        }
+        
+        // Sample log message
+        $container->get('logger')->info("Slim-Skeleton '/cardapio' route");
+        
+
+        // Render index view
+        return $container->get('renderer')->render($response, 'cardapio.phtml', $args);
     });
 };

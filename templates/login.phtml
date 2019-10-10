@@ -3,14 +3,13 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Login</title>
+    <title>login</title>
     <link href='//fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 </head>
 
 <body>
-    <h1>Login</h1>
-
     <?
     if (isset($sucesso)) {
         if ($sucesso == 'fail') {
@@ -18,15 +17,46 @@
         }
     }
     ?>
-
     <form action="/login/" method="post">
-        <label for="email">E-mail</label>
-        <input type="email" name="email" id="email">
-        <br>
-        <label for="senha">Senha</label>
-        <input type="password" name="senha" id="senha">
-        <br>
-        <input type="submit" value="Enviar">
+        <div class="container">
+            <div class="text-center m-5">
+                <h1>Log-in</h1>
+            </div>
+            <div class="text-left mt-5">
+                <div class="form-group">
+                    <label>E-mail</label>
+                    <input type="email" name="email" class="form-control" aria-describedby="emailHelp">
+                </div>
+                <div class="form-group">
+                    <label>Senha</label>
+                    <input type="password" name="senha" class="form-control">
+                </div>
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                    <label class="custom-control-label" for="customSwitch1">Mantenha-me conectado</label>
+                </div>
+                <div class="text-center mt-4">
+                    <button type="submit" value="Enviar" class="btn btn-secondary rounded-pill">Entrar</button>
+                </div>
+                <div class="text-center mt-5">
+                    <label>Não possui conta? <a href="contanova.html">Registrar-se</a></label>
+                </div>
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="text-center mt-5">
+                                <button type="button" class="btn btn-primary rounded-pill"><img src="fb_icon.png" class="rounded-pill mr-2" alt="">Log in with Facebook</button>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="text-center mt-5">
+                                <button type="button" class="btn btn-secondary rounded-pill"><img src="google_icon.png" class="rounded-pill mr-2" alt="">Log in with E-mail</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </form>
 
 </body>

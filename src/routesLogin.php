@@ -7,9 +7,10 @@ use Slim\Http\Response;
 return function (App $app) {
     $container = $app->getContainer();
 
-    $app->get('/login/', function (Request $request, Response $response, array $args) use ($container) {
+    $app->get('/login/[{sucesso}]', function (Request $request, Response $response, array $args) use ($container) {
         // Sample log message
         $container->get('logger')->info("Slim-Skeleton '/login/' route");
+
         // Render index view
         return $container->get('renderer')->render($response, 'login.phtml', $args);
     });
@@ -22,14 +23,20 @@ return function (App $app) {
 
         $params = $request->getParsedBody();
 
-        $resultSet = $conexao->query('SELECT * FROM projetoacadmia WHERE email = "' . $params['email'] . '" AND senha = "' . md5($params['senha']) . '"')->fetchAll();
+        $resultSet = $conexao->query('SELECT * FROM usuario 
+                                      WHERE email = "' . $params['email'] . '" 
+                                            AND senha = "' . md5($params['senha']) . '"')->fetchAll();
 
         if (count($resultSet) == 1) {
-            return $response->withRedirect('/');
+            $_SESSION['login']['ehLogado'] = true;
+            $_SESSION['login']['nome'] = $resultSet['nome'];
+            
+            return $response->withRedirect('/indexProdutos');
         } else {
-            echo "ACESSO NEGADO";
-            exit;
-        };
+            $_SESSION['login']['ehLogado'] = false;
+
+            return $response->withRedirect('/login/fail');
+        }
 
         // Render index view
         return $container->get('renderer')->render($response, 'login.phtml', $args);
