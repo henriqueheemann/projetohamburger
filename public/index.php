@@ -32,5 +32,8 @@ $routes($app);
 $routes = require __DIR__ . '/../src/routesLogin.php';
 $routes($app);
 
+$routes = require __DIR__ . '/../src/routesInicio.php';
+$routes($app);
+
 // Run app
 $app->run();

@@ -9,7 +9,7 @@ return function (App $app) {
 
     $app->get('/login/[{sucesso}]', function (Request $request, Response $response, array $args) use ($container) {
         // Sample log message
-        $container->get('logger')->info("Slim-Skeleton '/login/' route");
+        $container->get('logger')->info("Slim-Skeleton '/inicio/' route");
 
         // Render index view
         return $container->get('renderer')->render($response, 'login.phtml', $args);
@@ -31,14 +31,12 @@ return function (App $app) {
             $_SESSION['login']['ehLogado'] = true;
             $_SESSION['login']['nome'] = $resultSet['nome'];
             
-            return $response->withRedirect('/indexProdutos');
+            return $response->withRedirect('/inicio/');
         } else {
             $_SESSION['login']['ehLogado'] = false;
 
             return $response->withRedirect('/login/fail');
         }
 
-        // Render index view
-        return $container->get('renderer')->render($response, 'login.phtml', $args);
     });
 };
