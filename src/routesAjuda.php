@@ -7,9 +7,9 @@ use Slim\Http\Response;
 return function (App $app) {
     $container = $app->getContainer();
 
-    $app->get('/ajuda/[{sucesso}]', function (Request $request, Response $response, array $args) use ($container) {
+    $app->get('/ajuda/', function (Request $request, Response $response, array $args) use ($container) {
         // Sample log message
-        $container->get('logger')->info("Slim-Skeleton '/inicio/' route");
+        $container->get('logger')->info("Slim-Skeleton '/ajuda/' route");
 
         // Render index view
         return $container->get('renderer')->render($response, 'ajuda.phtml', $args);

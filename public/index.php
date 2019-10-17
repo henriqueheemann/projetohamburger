@@ -35,5 +35,20 @@ $routes($app);
 $routes = require __DIR__ . '/../src/routesInicio.php';
 $routes($app);
 
+$routes = require __DIR__ . '/../src/routesAjuda.php';
+$routes($app);
+
+$routes = require __DIR__ . '/../src/routesDesafio.php';
+$routes($app);
+
+$routes = require __DIR__ . '/../src/routesFinanceiro.php';
+$routes($app);
+
+$routes = require __DIR__ . '/../src/routesMeta.php';
+$routes($app);
+
+$routes = require __DIR__ . '/../src/routesSuplemento.php';
+$routes($app);
+
 // Run app
 $app->run();
