@@ -31,7 +31,11 @@ return function (App $app) {
             $_SESSION['login']['ehLogado'] = true;
             $_SESSION['login']['nome'] = $resultSet['nome'];
             
+<<<<<<< Updated upstream
             return $response->withRedirect('/indexProdutos');
+=======
+            return $response->withRedirect('/');
+>>>>>>> Stashed changes
         } else {
             $_SESSION['login']['ehLogado'] = false;
 
