@@ -50,5 +50,8 @@ $routes($app);
 $routes = require __DIR__ . '/../src/routesSuplemento.php';
 $routes($app);
 
+$routes = require __DIR__ . '/../src/routesAgendar_consulta.php';
+$routes($app);
+
 // Run app
 $app->run();
