@@ -56,5 +56,8 @@ $routes($app);
 $routes = require __DIR__ . '/../src/routesSuplemento_selec.php';
 $routes($app);
 
+$routes = require __DIR__ . '/../src/routesCriar_conta.php';
+$routes($app);
+
 // Run app
 $app->run();
