@@ -7,12 +7,28 @@ use Slim\Http\Response;
 return function (App $app) {
     $container = $app->getContainer();
 
-    $app->get('/criar_conta/', function (Request $request, Response $response, array $args) use ($container) {
+    $app->get('/criar_conta/[{sucesso}]', function (Request $request, Response $response, array $args) use ($container) {
         // Sample log message
-        $container->get('logger')->info("Slim-Skeleton '/criar_conta/' route");
+        $container->get('logger')->info("Slim-Skeleton '/inicio/' route");
 
         // Render index view
         return $container->get('renderer')->render($response, 'criar_conta.phtml', $args);
     });
 
+    $app->post('/criar_conta/', function (Request $request, Response $response, array $args) use ($container) {
+        // Sample log message
+        $container->get('logger')->info("Slim-Skeleton '/criar_conta/' route");
+
+        $conexao = $container->get('pdo');
+
+        $params = $request->getParsedBody();
+
+       
+
+
+
+       
+
+       
+    });
 };
