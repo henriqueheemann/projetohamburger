@@ -18,10 +18,15 @@
             <div class="col-12">
                 <div class="row">
                     <div class="input-group mb-3">
+                        
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Nome completo</span>
+                            
                         </div>
-                        <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+                        
+                            <input type="text" name="nome" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+                        
+                        
                     </div>
                 </div>
                 <div class="row">
@@ -29,7 +34,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">E-mail</span>
                         </div>
-                        <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="text" name="email" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
                     </div>
                 </div>
                 <div class="row">
@@ -37,7 +42,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Senha</span>
                         </div>
-                        <input type="password" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="password" name="senha" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
                     </div>
                 </div>
                 <div class="row">
@@ -53,7 +58,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Cidade</span>
                         </div>
-                        <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="text" name="cidade"class="form-control" aria-label="Username" aria-describedby="basic-addon1">
                     </div>
                 </div>
                 <div class="row">
@@ -61,7 +66,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Nº da casa</span>
                         </div>
-                        <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="text" name="numeroCasa"class="form-control" aria-label="Username" aria-describedby="basic-addon1">
                     </div>
                 </div>
                 <div class="row">
@@ -69,7 +74,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">CEP</span>
                         </div>
-                        <input type="number" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="number" name="cep" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
                     </div>
                 </div>
                 <div class="row">
@@ -77,13 +82,26 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Complemento</span>
                         </div>
-                        <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="text" name="complemento"class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Mensalidade</span>
+                        </div>
+                        <select name="mensalidade">
+                        <option>Mensalidade</option>
+                        <option>250</option>
+                        <option>500</option>
+                        <option>750</option>
+                            </select>
                     </div>
                 </div>
             </div>
         </div>
         <div class="text-center">
-            <a href="/login/" type="submit" class="btn btn-secondary text-center">Confirmar</a>
+            <input type="submit" value="Enviar">
         </div>
         </div>
     </form>
