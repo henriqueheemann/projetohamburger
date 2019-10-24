@@ -23,12 +23,21 @@ return function (App $app) {
 
         $params = $request->getParsedBody();
 
-       
 
 
+        include_once('dependencies.php');
+        $nome = $_POST['nome'];
+        $email = $_POST['email'];
+        $senha = $_POST['senha'];
+        $cidade = $_POST['cidade'];
+        $numeroCasa = $_POST['numeroCasa'];
+        $cep = $_POST['cep'];
+        $complemento = $_POST['complemento'];
 
-       
+        $resultSet = $conexao->query ("INSERT INTO usuario (nome, email, senha) 
+                                    VALUES ('$nome', '$email', '$senha')");
 
-       
+
+        return $response->withRedirect('/login/');
     });
 };
