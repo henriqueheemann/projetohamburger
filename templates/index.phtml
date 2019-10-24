@@ -59,3 +59,70 @@
 </body>
 
 </html> -->
+
+<?php
+            foreach ($textos as $key => $texto) {
+                echo '<div class="col-12">';
+                echo ' <div class="row">';
+                echo ' <div class="col-sm">';
+                echo '<a href="/ajuda/" class="card card-link mb-5">';
+                echo '      <div class="card-body text-dark">';
+                echo '<h5 class="card-title">Ajuda</h5>';
+                echo '<p class="card-text">'. $texto['texto_ajuda'] . '</p>';
+                echo '</div>';
+                echo '</a>';
+                echo '</div>';
+            }
+            /*
+                <div class="col-sm">
+                    <a href="/desafio/" class="card card-link mb-5">
+                        <div class="card-body text-dark">
+                            <h5 class="card-title">Desafios</h5>
+                            <p class="card-text"><?= $textos['texto_desafios'] ?></p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="row">
+                <div class="col-sm">
+                    <a href="/financeiro/" class="card card-link mb-5">
+                        <div class="card-body text-dark">
+                            <h5 class="card-title">Financeiro</h5>
+                            <p class="card-text"><?= $textos['texto_financeiro'] ?></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm">
+                    <a href="/meta/" class="card card-link mb-5">
+                        <div class="card-body text-dark">
+                            <h5 class="card-title">Metas</h5>
+                            <p class="card-text"><?= $textos['texto_meta'] ?></p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="row">
+                <div class="col-sm">
+                    <a href="/suplemento/" class="card card-link mb-5">
+                        <div class="card-body text-dark">
+                            <h5 class="card-title">Suplementos</h5>
+                            <p class="card-text"><?= $textos['texto_suplemento'] ?></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm">
+                    <a href="/ajuda/" class="card card-link mb-5">
+                        <div class="card-body text-dark">
+                            <h5 class="card-title">Consultas</h5>
+                            <p class="card-text"<?= $textos['texto_consulta'] ?></p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+*/
+            ?>

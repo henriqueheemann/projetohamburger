@@ -56,71 +56,72 @@
             <div class="m-5">
                 <h1>Bem vindo, Usuário!</h1>
             </div>
-            <div class="col-12">
-                <div class="row">
-                    <div class="col-sm">
-                        <a href="/ajuda/" class="card card-link mb-5">
-                            <div class="card-body text-dark">
-                                <h5 class="card-title">Ajuda</h5>
-                                <p class="card-text">Aqui você pode contar com ajuda de nosso suporte técnico, além de ter
-                                    acesso aos contatos da academia.</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-sm">
-                        <a href="/desafio/" class="card card-link mb-5">
-                            <div class="card-body text-dark">
-                                <h5 class="card-title">Desafios</h5>
-                                <p class="card-text">Clique aqui para ver seus desafios propostos pelo seu personal trainer.
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="row">
-                    <div class="col-sm">
-                        <a href="/financeiro/" class="card card-link mb-5">
-                            <div class="card-body text-dark">
-                                <h5 class="card-title">Financeiro</h5>
-                                <p class="card-text">Tenha visão total de seus gastos na academia, como: suplementos,
-                                    boletos, etc.</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-sm">
-                        <a href="/meta/" class="card card-link mb-5">
-                            <div class="card-body text-dark">
-                                <h5 class="card-title">Metas</h5>
-                                <p class="card-text">Clicando aqui, você poderá gerenciar suas metas, podendo editá-las ou
-                                    criá-las.</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="row">
-                    <div class="col-sm">
-                        <a href="/suplemento/" class="card card-link mb-5">
-                            <div class="card-body text-dark">
-                                <h5 class="card-title">Suplementos</h5>
-                                <p class="card-text">Confira os nossos suplementos com promoções e preços imperdíveis.</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-sm">
-                        <a href="/ajuda/" class="card card-link mb-5">
-                            <div class="card-body text-dark">
-                                <h5 class="card-title">Consultas</h5>
-                                <p class="card-text">Marque suas consultas com um de nossos nutricionistas clicando aqui.</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+            <?php
+            foreach ($textos as $key => $texto) {
+                echo '<div class="col-12">';
+                echo '<div class="row">';
+                echo '<div class="col-12">';
+                echo ' <div class="row">';
+                echo ' <div class="col-sm">';
+                echo '<a href="/ajuda/" class="card card-link mb-5">';
+                echo '      <div class="card-body text-dark">';
+                echo '<h5 class="card-title">' . $texto['titulo_ajuda'] . '</h5>';
+                echo '<p class="card-text">' . $texto['texto_ajuda'] . '</p>';
+                echo '</div>';
+                echo '</a>';
+                echo '</div>';
+                echo '<div class="col-sm">';
+                echo '<a href="/desafio/" class="card card-link mb-5">';
+                echo '<div class="card-body text-dark">';
+                echo '<h5 class="card-title">' . $texto['titulo_desafio'] . '</h5>';
+                echo '<p class="card-text">' . $texto['texto_desafio'] . '</p>';
+                echo '</div>';
+                echo '</a>';
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
+                echo '<div class="col-12">';
+                echo '<div class="row">';
+                echo '<div class="col-sm">';
+                echo '<a href="/financeiro/" class="card card-link mb-5">';
+                echo '<div class="card-body text-dark">';
+                echo '<h5 class="card-title">' . $texto['titulo_financeiro'] . '</h5>';
+                echo '<p class="card-text">' . $texto['texto_financeiro'] . '</p>';
+                echo '</div>';
+                echo '</a>';
+                echo '</div>';
+                echo '<div class="col-sm">';
+                echo '<a href="/meta/" class="card card-link mb-5">';
+                echo '<div class="card-body text-dark">';
+                echo '<h5 class="card-title">' . $texto['titulo_meta'] . '</h5>';
+                echo '<p class="card-text">' . $texto['texto_meta'] . '</p>';
+                echo '</div>';
+                echo '</a>';
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
+                echo '<div class="col-12">';
+                echo '<div class="row">';
+                echo '<div class="col-sm">';
+                echo '<a href="/suplemento/" class="card card-link mb-5">';
+                echo '<div class="card-body text-dark">';
+                echo '<h5 class="card-title">' . $texto['titulo_suplemento'] . '</h5>';
+                echo '<p class="card-text">' . $texto['texto_suplemento'] . '</p>';
+                echo '</div>';
+                echo '</a>';
+                echo '</div>';
+                echo '<div class="col-sm">';
+                echo '<a href="/agendar_consulta/" class="card card-link mb-5">';
+                echo '<div class="card-body text-dark">';
+                echo '<h5 class="card-title">' . $texto['titulo_consulta'] . '</h5>';
+                echo '<p class="card-text">' . $texto['texto_consulta'] . '</p>';
+                echo '</div>';
+                echo '</a>';
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
+            }
+            ?>
     </form>
 </body>
 
