@@ -23,7 +23,7 @@ return function (App $app) {
 
         $params = $request->getParsedBody();
 
-        $resultSet = $conexao->query('SELECT * FROM usuario 
+        $resultSet = $conexao->query('SELECT * FROM usuarioLogin 
                                       WHERE email = "' . $params['email'] . '" 
                                             AND senha = "' . md5($params['senha']) . '"')->fetchAll();
 
