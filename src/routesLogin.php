@@ -23,9 +23,9 @@ return function (App $app) {
 
         $params = $request->getParsedBody();
 
-        $resultSet = $conexao->query('SELECT * FROM usuario
+        $resultSet = $conexao->query('SELECT * FROM usuario 
                                       WHERE email = "' . $params['email'] . '" 
-                                            AND senha = "' . $params['senha'] . '"')->fetchAll();
+                                            AND senha = "' . md5($params['senha']) . '"')->fetchAll();
 
         if (count($resultSet) == 1) {
             $_SESSION['login']['ehLogado'] = true;
