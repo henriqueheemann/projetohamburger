@@ -58,10 +58,18 @@
             <div class="col-12">
                 <div class="row">
                     <div class="card mx-auto mt-5 mb-5" style="width: 18rem;">
-                    <div class="col-4 p-1">
-                                            <img class="imagensSuplemento pb-4 pb-4" src="img/aguaa.png">
-                                        </div>
+                        <div class="col-4 p-1">
+
+                        </div>
                         <div class="card-body">
+                                                <?php
+                                                print_r($imagem);
+                                                
+                                                    $imagem = array();
+                                                    foreach ($imagem as $value) { 
+                                                    echo "<img src='/$imagem' width=100px height=100px />";
+                                                }
+                                                ?>
                             <h5 class="card-title">Suplemento</h5>
                             <p class="card-text">dex pila feio</p>
                         </div>
