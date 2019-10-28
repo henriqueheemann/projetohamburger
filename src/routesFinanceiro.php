@@ -13,9 +13,9 @@ return function (App $app) {
         
         $conexao = $container->get('pdo');
 
-        $resultSet = $conexao->query('SELECT * FROM inicio')->fetchAll();
+        $resultSet = $conexao->query('SELECT * FROM usuario')->fetchAll();
 
-        $args['nome_usuario'] = $resultSet;
+        $args['nome'] = $resultSet;
 
         // Render index view
         return $container->get('renderer')->render($response, 'financeiro.phtml', $args);

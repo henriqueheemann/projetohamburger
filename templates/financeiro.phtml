@@ -62,7 +62,7 @@
                         <img src="#" id="imgshow">
                         <?php
                         foreach ($nome as $key => $nome_usuario) {
-                            echo '<p>' . $nome_usuario . '</p>';
+                            echo '<p>' . $nome_usuario['nome'] . '</p>';
                         }
                         ?>
                     </div>
@@ -70,19 +70,21 @@
             </div>
             <div class="col-12 mt-4">
                 <div class="row">
-                    <div class="col-8 col-md-3 offset-md-3 border rounded border-white text-right p-3">
-                        <p>Plano VIP da Academia</p>
-                        <p>Personal Trainer</p>
-                        <p>Whey 2Kg</p>
-                        <hr class="bg-white">
-                        <p>Total:</p>
+                    <div class="card col-8 col-md-3 offset-md-3 mr-1 border rounded border-black">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Plano VIP da Academia</li>
+                            <li class="list-group-item">Personal Trainer</li>
+                            <li class="list-group-item">Whey 2Kg</li>
+                            <li class="list-group-item">Total:</li>
+                        </ul>
                     </div>
-                    <div class="col-4 col-md-3 border rounded border-white float-left p-3">
-                        <p>R$230,00</p>
-                        <p>R$170,50</p>
-                        <p>R$200,00</p>
-                        <hr class="bg-white">
-                        <p>R$600,50</p>
+                    <div class="card col-4 col-md-3 ml-1 border rounded border-black">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">R$230,00</li>
+                            <li class="list-group-item">R$170,00</li>
+                            <li class="list-group-item">R$200,00</li>
+                            <li class="list-group-item">R$600,50</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -95,4 +97,5 @@
     </form>
 </body>
 <script type="text/javascript" src="../imgload.js"></script>
+
 </html>
