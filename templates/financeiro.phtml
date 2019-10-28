@@ -22,7 +22,7 @@
                         <a class="nav-item nav-link" href="/inicio/">Início</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-item nav-link active" href="/suplemento/">Suplementos</a>
+                        <a class="nav-item nav-link" href="/suplemento/">Suplementos</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-item nav-link" href="/financeiro/">Financeiro</a>
@@ -60,11 +60,7 @@
                         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
                         <input type="file" id="imgload">
                         <img src="#" id="imgshow">
-                        <?php
-                        foreach ($nome as $key => $nome_usuario) {
-                            echo '<p>' . $nome_usuario['nome_completo'] . '</p>';
-                        }
-                        ?>
+                        <p>Nome do usuário</p>
                     </div>
                 </div>
             </div>
@@ -94,5 +90,5 @@
         </div>
     </form>
 </body>
-
+<script type="text/javascript" src="../imgload.js"></script>
 </html>
