@@ -31,9 +31,9 @@ return function (App $app) {
         $numeroCasa = $_POST['numeroCasa'];
         $cep = $_POST['cep'];
         $complemento = $_POST['complemento'];
-        $mensalidade = $_POST['mensalidade'];
+        $sexo = $_POST['sexo'];
 
-        $resultSet = $conexao->query ("INSERT INTO usuario (nome, email, senha, cidade, numeroCasa, cep, complemento, mensalidade) 
+        $resultSet = $conexao->query ("INSERT INTO usuario (nome, email, senha, cidade, numeroCasa, cep, complemento, sexo) 
                                     VALUES ('$nome', 
                                             '$email', 
                                             '$senha', 
@@ -41,7 +41,7 @@ return function (App $app) {
                                             '$numeroCasa', 
                                             '$cep', 
                                             '$complemento', 
-                                            '$mensalidade')");
+                                            '$sexo')");
 
         return $response->withRedirect('/login/');
     });

@@ -13,7 +13,7 @@ return function (App $app) {
         
         $conexao = $container->get('pdo');
 
-        $resultSet = $conexao->query('SELECT * FROM usuario')->fetchAll();
+        $resultSet = $conexao->query('SELECT * FROM usuario WHERE email = "email"')->fetchAll();
 
         $args['nome'] = $resultSet;
 
