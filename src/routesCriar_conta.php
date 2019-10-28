@@ -23,8 +23,6 @@ return function (App $app) {
 
         $params = $request->getParsedBody();
 
-
-
         include_once('dependencies.php');
         $nome = $_POST['nome'];
         $email = $_POST['email'];
@@ -36,8 +34,14 @@ return function (App $app) {
         $mensalidade = $_POST['mensalidade'];
 
         $resultSet = $conexao->query ("INSERT INTO usuario (nome, email, senha, cidade, numeroCasa, cep, complemento, mensalidade) 
-                                    VALUES ('$nome', '$email', '$senha', '$cidade', '$numeroCasa', '$cep', '$complemento', '$mensalidade')");
-
+                                    VALUES ('$nome', 
+                                            '$email', 
+                                            '$senha', 
+                                            '$cidade', 
+                                            '$numeroCasa', 
+                                            '$cep', 
+                                            '$complemento', 
+                                            '$mensalidade')");
 
         return $response->withRedirect('/login/');
     });
