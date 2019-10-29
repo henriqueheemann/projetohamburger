@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Criar Conta</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../criar_conta.css">
 </head>
 
 <body>
@@ -82,15 +83,24 @@
                 </div>
                 <div class="row">
                     <div class="input-group mb-3">
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <label class="input-group-text" for="inputGroupSelect01">Sexo</label>
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Idade</span>
+                        </div>
+                        <input type="number" name="idade" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Sexo</span>
+                            <span class="input-group-text ml-3" id="basic-addon1">Masculino</span>
+                            <div class="input-group-text">
+                                <input type="radio" name="sexo" value="Masculino" aria-label="Radio button for following text input">
                             </div>
-                            <select class="custom-select" name="sexo" id="inputGroupSelect01">
-                                <option selected>Escolha</option>
-                                <option value="Masculino">Masculino</option>
-                                <option value="Feminino">Feminino</option>
-                            </select>
+                            <span class="input-group-text ml-3" id="basic-addon1">Feminino</span>
+                            <div class="input-group-text">
+                                <input type="radio" name="sexo" value="Feminino" aria-label="Radio button for following text input">
+                            </div>
                         </div>
                     </div>
                 </div>
