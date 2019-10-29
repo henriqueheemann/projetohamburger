@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Suplemento</title>
+    <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
@@ -57,59 +58,23 @@
             <div class="text-center m-5">
                 <h1>Suplementos</h1>
             </div>
-            <div class="col-12 text-center">
-                <div class="row">
-                    <a href="/suplemento_selec/" class="col-sm p-5 mb-3 border border-secondary rounded card-link">
-                        <img src="img/whey1.png" height="500px" width="500px" class="img-fluid" alt="">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </a>
-                    <a href="/suplemento_selec/" class="col-sm p-5 mb-3 border border-secondary rounded card-link">
-                        <img src="img/whey2.png" height="500px" width="500px" class="img-fluid" alt="">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </a>
-                    <a href="/suplemento_selec/" class="col-sm p-5 mb-3 border border-secondary rounded card-link">
-                        <img src="img/whey3.png" height="500px" width="500px" class="img-fluid" alt="">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </a>
-                </div>
-                <div class="row">
-                    <a href="/suplemento_selec/" class="col-sm p-5 mb-3 border border-secondary rounded card-link">
-                        <img src="img/whey4.png" height="500px" width="500px" class="img-fluid" alt="">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </a>
-                    <a href="/suplemento_selec/" class="col-sm p-5 mb-3 border border-secondary rounded card-link">
-                        <img src="img/whey5.png" height="500px" width="500px" class="img-fluid" alt="">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </a>
-                    <a href="/suplemento_selec/" class="col-sm p-5 mb-3 border border-secondary rounded card-link">
-                        <img src="img/whey6.png" height="500px" width="500px" class="img-fluid" alt="">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </a>
-                </div>
+
+        <?php 
+        foreach($produtos as $produto){
+            echo '<div class="col-4 text-center float-left">';
+                echo '<div class="row">';
+                    echo '<a href="/suplemento_selec/" class="col-12 flex-container aling-center p-5 mr-3 border border-secondary rounded card-link">';
+                    echo '<img src="' .$produto['endereçoIMG']. '" height="300px" width="200px" class="img-fluid">';
+                    echo '<i class="fas fa-star"></i>';
+                    echo '<i class="fas fa-star"></i>';
+                    echo '<i class="fas fa-star"></i>';
+                    echo '<i class="fas fa-star"></i>';
+                    echo '<i class="fas fa-star"></i>';
+                    echo '</a>';
+                    echo '</div>';
+                    echo '</div>';
+        }
+        ?>
             </div>
         </div>
     </form>
