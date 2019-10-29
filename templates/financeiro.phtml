@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Financeiro</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../background.css">
 </head>
 
 <body>
@@ -41,7 +42,7 @@
                     </li>
                 </div>
                 <span class="navbar-text">
-                    <a href="/login/">Sair</a>
+                    <a href="/sair/">Sair</a>
                 </span>
             </div>
         </nav>
@@ -50,7 +51,7 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="/inicio/">Início</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Financeiro</li>
+                        <li class="breadcrumb-item active" aria-current="page">Financeiro </li>
                     </ol>
                 </nav>
             </div>
@@ -60,11 +61,7 @@
                         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
                         <input type="file" id="imgload">
                         <img src="#" id="imgshow">
-                        <?php
-                        foreach ($nome as $key => $nome_usuario) {
-                            echo '<p>' . $nome_usuario['nome'] . '</p>';
-                        }
-                        ?>
+                        <?php echo $_SESSION['login']['nome']; ?>
                     </div>
                 </div>
             </div>

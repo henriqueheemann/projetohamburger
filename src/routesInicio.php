@@ -11,6 +11,11 @@ return function (App $app) {
         // Sample log message
         $container->get('logger')->info("Slim-Skeleton '/inicio/' route");
 
+        if ($_SESSION['login']['ehLogado'] != true) {
+            return $response->withRedirect('/login/');
+            exit;
+        }
+        
         $conexao = $container->get('pdo');
 
         $resultSet = $conexao->query('SELECT * FROM inicio')->fetchAll();

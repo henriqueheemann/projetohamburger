@@ -10,6 +10,11 @@ return function (App $app) {
     $app->get('/financeiro/', function (Request $request, Response $response, array $args) use ($container) {
         // Sample log message
         $container->get('logger')->info("Slim-Skeleton '/financeiro/' route");
+
+        if ($_SESSION['login']['ehLogado'] != true) {
+            return $response->withRedirect('/login/');
+            exit;
+        }
         
         $conexao = $container->get('pdo');
 
