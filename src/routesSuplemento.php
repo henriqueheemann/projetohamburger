@@ -11,8 +11,19 @@ return function (App $app) {
         // Sample log message
         $container->get('logger')->info("Slim-Skeleton '/suplemento/' route");
 
+        
+                $conexao = $container->get('pdo');
+        
+                $resultSet = $conexao->query('SELECT * FROM produto')->fetchAll();
+
+               
+                $args['produtos'] = $resultSet;
+
+
         // Render index view
         return $container->get('renderer')->render($response, 'suplemento.phtml', $args);
+
+
     });
 
 };
