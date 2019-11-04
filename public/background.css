@@ -1,4 +1,10 @@
 body {
+
     background-image: url("background.jpg");
     background-repeat: no-repeat;
+}
+
+.suplemento{
+    background-color: grey;
+ 
 }

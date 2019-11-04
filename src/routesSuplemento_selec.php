@@ -16,11 +16,10 @@ return function (App $app) {
         $conexao = $container->get('pdo');
         
 
-        $sql = "SELECT endereçoIMG FROM produto";
-        $result = $conexao->query($sql)->fetchAll();
+        $resultSet = $conexao->query('SELECT * FROM produto')->fetchAll();
 
-        $args['imagem'] = $result;
-        
+        $args['produtos'] = $resultSet;
+
 
         // Render index view
         return $container->get('renderer')->render($response, 'suplemento_selec.phtml', $args);
