@@ -68,7 +68,7 @@
         foreach($produtos as $produto){
             echo '<div class="col-4 text-center float-left">';
                 echo '<div class="row ">';
-                    echo '<a href="/suplemento_selec/" class=" col-10  suplemento text-warning flex-container aling-center p-5 m-4 border border-secondary rounded card-link">';
+                    echo '<a href='."/suplemento_selec/".$selec['idproduto'].' class=" col-10  suplemento text-warning flex-container aling-center p-5 m-4 border border-secondary rounded card-link">';
                     echo '<img src="' .$produto['endereçoIMG']. '" height="300px" width="200px" class="img-fluid">';
                     echo '<i class="fas fa-star"></i>';
                     echo '<i class="fas fa-star"></i>';
