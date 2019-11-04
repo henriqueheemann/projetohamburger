@@ -41,6 +41,9 @@ $routes($app);
 $routes = require __DIR__ . '/../src/routesDesafio.php';
 $routes($app);
 
+$routes = require __DIR__ . '/../src/routesDesafio_selec.php';
+$routes($app);
+
 $routes = require __DIR__ . '/../src/routesFinanceiro.php';
 $routes($app);
 

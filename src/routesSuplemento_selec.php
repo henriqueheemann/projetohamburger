@@ -12,6 +12,7 @@ return function (App $app) {
         $container->get('logger')->info("Slim-Skeleton '/suplemento_selec/' route");
 
 
+
         $conexao = $container->get('pdo');
         
 

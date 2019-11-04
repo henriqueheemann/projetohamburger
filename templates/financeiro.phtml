@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Financeiro</title>
+    <link rel="stylesheet" href="../background.css">
+    <link rel="shortcut icon" href="../gym.png" type="image/x-icon">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
@@ -15,17 +17,17 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand text-white" href="/inicio/"><img src="gym.png" class="mr-3" width="30" height="30" alt="">Acadmia do Borel</a>
+            <a class="navbar-brand text-white" href="/inicio/"><img src="../gym.png" class="mr-3" width="30" height="30" alt="">Acadmia do Borel</a>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav mr-auto">
                     <li class="nav-item">
                         <a class="nav-item nav-link" href="/inicio/">Início</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-item nav-link active" href="/suplemento/">Suplementos</a>
+                        <a class="nav-item nav-link" href="/suplemento/">Suplementos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-item nav-link" href="/financeiro/">Financeiro</a>
+                        <a class="nav-item nav-link active" href="/financeiro/">Financeiro</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-item nav-link" href="/ajuda/">Ajuda</a>
@@ -41,7 +43,7 @@
                     </li>
                 </div>
                 <span class="navbar-text">
-                    <a href="/login/">Sair</a>
+                    <a href="/sair/">Sair</a>
                 </span>
             </div>
         </nav>
@@ -50,35 +52,39 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="/inicio/">Início</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Financeiro</li>
+                        <li class="breadcrumb-item active" aria-current="page">Financeiro </li>
                     </ol>
                 </nav>
             </div>
-            <div class="col-12">
+            <div class="col-12 text-white">
                 <div class="row">
                     <div class="col-md-2 border border-primary text-center">
                         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
                         <input type="file" id="imgload">
                         <img src="#" id="imgshow">
-                        <p>Nome do usuário</p>
+                        <div class="row">
+                            <?php echo $_SESSION['login']['nome']; ?>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="col-12 mt-4">
                 <div class="row">
-                    <div class="col-8 col-md-3 offset-md-3 border rounded border-white text-right p-3">
-                        <p>Plano VIP da Academia</p>
-                        <p>Personal Trainer</p>
-                        <p>Whey 2Kg</p>
-                        <hr class="bg-white">
-                        <p>Total:</p>
+                    <div class="card col-8 col-md-3 offset-md-3 mr-1 border rounded border-black">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Plano VIP da Academia</li>
+                            <li class="list-group-item">Personal Trainer</li>
+                            <li class="list-group-item">Whey 2Kg</li>
+                            <li class="list-group-item">Total:</li>
+                        </ul>
                     </div>
-                    <div class="col-4 col-md-3 border rounded border-white float-left p-3">
-                        <p>R$230,00</p>
-                        <p>R$170,50</p>
-                        <p>R$200,00</p>
-                        <hr class="bg-white">
-                        <p>R$600,50</p>
+                    <div class="card col-4 col-md-3 ml-1 border rounded border-black">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">R$230,00</li>
+                            <li class="list-group-item">R$170,50</li>
+                            <li class="list-group-item">R$200,00</li>
+                            <li class="list-group-item">R$600,50</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -90,5 +96,6 @@
         </div>
     </form>
 </body>
+<script type="text/javascript" src="../imgload.js"></script>
 
 </html>

@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Criar Conta</title>
+    <link rel="stylesheet" href="../criar_conta.css">
+    <link rel="shortcut icon" href="../gym.png" type="image/x-icon">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="styleBackgraund.css">
 
@@ -21,15 +23,10 @@
             <div class="col-12">
                 <div class="row">
                     <div class="input-group mb-3">
-                        
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Nome completo</span>
-                            
                         </div>
-                        
-                            <input type="text" name="nome" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
-                        
-                        
+                        <input type="text" name="nome" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
                     </div>
                 </div>
                 <div class="row">
@@ -61,7 +58,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Cidade</span>
                         </div>
-                        <input type="text" name="cidade"class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="text" name="cidade" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
                     </div>
                 </div>
                 <div class="row">
@@ -69,7 +66,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Nº da casa</span>
                         </div>
-                        <input type="text" name="numeroCasa"class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="text" name="numeroCasa" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
                     </div>
                 </div>
                 <div class="row">
@@ -85,26 +82,36 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Complemento</span>
                         </div>
-                        <input type="text" name="complemento"class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="text" name="complemento" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon1">Mensalidade</span>
+                            <span class="input-group-text" id="basic-addon1">Idade</span>
                         </div>
-                        <select name="mensalidade">
-                        <option>Mensalidade</option>
-                        <option>250</option>
-                        <option>500</option>
-                        <option>750</option>
-                            </select>
+                        <input type="number" name="idade" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text label" id="basic-addon1">Sexo</span>
+                            <span class="input-group-text ml-1 label" id="basic-addon1">Masculino</span>
+                            <div class="input-group-text radio">
+                                <input type="radio" name="sexo" value="Masculino" aria-label="Radio button for following text input">
+                            </div>
+                            <span class="input-group-text ml-1 label" id="basic-addon1">Feminino</span>
+                            <div class="input-group-text radio">
+                                <input type="radio" name="sexo" value="Feminino" aria-label="Radio button for following text input">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="text-center">
-            <input type="submit" value="Enviar">
+            <input type="submit" value="Enviar" class="btn btn-secondary">
         </div>
         </div>
     </form>

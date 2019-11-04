@@ -25,11 +25,11 @@ return function (App $app) {
 
         $resultSet = $conexao->query('SELECT * FROM usuario 
                                       WHERE email = "' . $params['email'] . '" 
-                                            AND senha = "' . $params['senha'] . '"')->fetchAll();
+                                            AND senha = "' . md5($params['senha']) . '"')->fetchAll();
 
         if (count($resultSet) == 1) {
             $_SESSION['login']['ehLogado'] = true;
-            $_SESSION['login']['nome'] = $resultSet['nome'];
+            $_SESSION['login']['nome'] = $resultSet[0]['nome'];
             
             return $response->withRedirect('/inicio/');
         } else {
@@ -39,4 +39,16 @@ return function (App $app) {
         }
 
     });
+
+    $app->get('/sair/', function (Request $request, Response $response, array $args) use ($container) {
+        // Sample log message
+        $container->get('logger')->info("Slim-Skeleton '/inicio/' route");
+
+        session_destroy();
+
+        // Render index view
+        return $container->get('renderer')->render($response, 'login.phtml', $args);
+    });
+
+
 };

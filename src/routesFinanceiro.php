@@ -11,6 +11,17 @@ return function (App $app) {
         // Sample log message
         $container->get('logger')->info("Slim-Skeleton '/financeiro/' route");
 
+        if ($_SESSION['login']['ehLogado'] != true) {
+            return $response->withRedirect('/login/');
+            exit;
+        }
+        
+        $conexao = $container->get('pdo');
+
+        $resultSet = $conexao->query('SELECT * FROM usuario WHERE email = "email"')->fetchAll();
+
+        $args['nome'] = $resultSet;
+
         // Render index view
         return $container->get('renderer')->render($response, 'financeiro.phtml', $args);
     });
