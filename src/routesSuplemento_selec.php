@@ -11,11 +11,17 @@ return function (App $app) {
         // Sample log message
         $container->get('logger')->info("Slim-Skeleton '/suplemento_selec/' route");
 
-        if ($_SESSION['login']['ehLogado'] != true) {
-            return $response->withRedirect('/login/');
-            exit;
-        }
+
+
+        $conexao = $container->get('pdo');
         
+
+        $sql = "SELECT endereçoIMG FROM produto";
+        $result = $conexao->query($sql)->fetchAll();
+
+        $args['imagem'] = $result;
+        
+
         // Render index view
         return $container->get('renderer')->render($response, 'suplemento_selec.phtml', $args);
     });

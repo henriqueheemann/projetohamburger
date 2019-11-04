@@ -59,56 +59,25 @@
             </div>
             <div class="col-12 text-center">
                 <div class="row">
-                    <a href="/suplemento_selec/" class="col-sm p-5 mb-3 border border-secondary rounded card-link">
-                        <img src="../whey1.png" height="500px" width="500px" class="img-fluid" alt="">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </a>
-                    <a href="/suplemento_selec/" class="col-sm p-5 mb-3 border border-secondary rounded card-link">
-                        <img src="../whey2.png" height="500px" width="500px" class="img-fluid" alt="">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </a>
-                    <a href="/suplemento_selec/" class="col-sm p-5 mb-3 border border-secondary rounded card-link">
-                        <img src="../whey3.png" height="500px" width="500px" class="img-fluid" alt="">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </a>
-                </div>
-                <div class="row">
-                    <a href="/suplemento_selec/" class="col-sm p-5 mb-3 border border-secondary rounded card-link">
-                        <img src="../whey4.png" height="500px" width="500px" class="img-fluid" alt="">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </a>
-                    <a href="/suplemento_selec/" class="col-sm p-5 mb-3 border border-secondary rounded card-link">
-                        <img src="../whey5.png" height="500px" width="500px" class="img-fluid" alt="">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </a>
-                    <a href="/suplemento_selec/" class="col-sm p-5 mb-3 border border-secondary rounded card-link">
-                        <img src="../whey6.png" height="500px" width="500px" class="img-fluid" alt="">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </a>
+
+                    <div class="card mx-auto mt-5 mb-5" style="width: 18rem;">
+                        <div class="col-4 p-1">
+
+                        </div>
+                        <div class="card-body">
+                                                <?php
+                                                print_r($imagem);
+                                                
+                                                    $imagem = array();
+                                                    foreach ($imagem as $value) { 
+                                                    echo "<img src='/$imagem' width=100px height=100px />";
+                                                }
+                                                ?>
+                            <h5 class="card-title">Suplemento</h5>
+                            <p class="card-text">dex pila feio</p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
