@@ -24,14 +24,18 @@ return function (App $app) {
         return $container->get('renderer')->render($response, 'suplemento.phtml', $args);
     });
 
-    $app->get('/suplemento/[{idproduto}]', function (Request $request, Response $response, array $args) use ($container) {
+    $app->get('/suplemento_selec/[{idproduto}]', function (Request $request, Response $response, array $args) use ($container) {
         // Sample log message
-        $container->get('logger')->info("Slim-Skeleton '/suplemento_selec/' route");
+        $container->get('logger')->info("Slim-Skeleton '/suplemento/' route");
 
         $conexao = $container->get('pdo');
 
+        $resultSet = $conexao->query('SELECT * FROM produto')->fetchAll();
+
+        $args['produtos'] = $resultSet;
+
         $contemProduto = false;
-        foreach ($_SESSION['selec'] as $produtoCarrinho) {
+        foreach ($_SESSION['produto'] as $produtoCarrinho) {
             if ($produtoCarrinho[0]['idproduto'] == $args['idproduto']) {
                 $contemProduto = true;
             }
@@ -41,7 +45,7 @@ return function (App $app) {
         if (!$contemProduto) {
             $resultSet = $conexao->query('SELECT * FROM produto WHERE idproduto = ' . $args['idproduto'])->fetchAll();
             //fazer select no banco para o resultset
-            $_SESSION['selec'][] = $resultSet;
+            $_SESSION['produto'][] = $resultSet;
         }
 
 
