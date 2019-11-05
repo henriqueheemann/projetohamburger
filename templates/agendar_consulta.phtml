@@ -13,15 +13,16 @@
 </head>
 
 <style>
-{
-    background-image: url("background.jpg");
-    background-repeat: no-repeat;
-};
+    {
+        background-image: url("background.jpg");
+        background-repeat: no-repeat;
+    }
 
+    ;
 </style>
-  
+
 <body>
-    <form action="/agendar_consulta/" method="get">
+    <form action="/agendar_consulta/" method="post">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark rounded-bottom">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -68,33 +69,34 @@
             <div class="m-5 text-white">
                 <h1>Agende sua consulta:</h1>
             </div>
-            <div class="col-12 mt-5">
-                <div style="overflow:hidden;">
+            <form action="agendar_consulta" method="post">
+                <div class="col-sm-6">
                     <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-8 bg-light rounded">
-                                <div id="datetimepicker13"></div>
+                        <div class="input-group date" id="datetimepicker4" data-target-input="nearest">
+                            <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker4" name="agenda">
+                            <div class="input-group-append" data-target="#datetimepicker4" data-toggle="datetimepicker">
+                                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-12 mt-5">
-                <div class="row">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">Confirmar nutricionista:</label>
+                <div class="col-12 mt-5">
+                    <div class="row">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="inputGroupSelect01">Confirmar nutricionista:</label>
+                            </div>
+                            <select class="custom-select" id="inputGroupSelect01" name="nutricionista">
+                                <option selected>Escolha...</option>
+                                <option value="nutri1">Rosana Tamares</option>
+                                <option value="nutri2">Rafael Soares</option>
+                                <option value="nutri3">Cláudia Mendes</option>
+                                <option value="nutri4">Arnaldo César</option>
+                            </select>
                         </div>
-                        <select class="custom-select" id="inputGroupSelect01">
-                            <option selected>Escolha...</option>
-                            <option value="nutri1">Rosana Tamares</option>
-                            <option value="nutri2">Rafael Soares</option>
-                            <option value="nutri3">Cláudia Mendes</option>
-                            <option value="nutri4">Arnaldo César</option>
-                        </select>
                     </div>
                 </div>
-            </div>
+            </form>
             <div class="text-center m-3">
                 <input type="submit">
             </div>
@@ -108,9 +110,8 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
 <script type="text/javascript">
     $(function() {
-        $('#datetimepicker13').datetimepicker({
-            inline: true,
-            sideBySide: true
+        $('#datetimepicker4').datetimepicker({
+            format: 'L'
         });
     });
 </script>

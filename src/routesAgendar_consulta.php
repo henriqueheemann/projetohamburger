@@ -26,10 +26,13 @@ return function (App $app) {
 
         $conexao = $container->get('pdo');
 
-        $params = $request->getParsedBody();
+        $consulta = $_POST;
 
+        $resultSet = $conexao->query ('INSERT INTO usuario (dia,nomeNutri) VALUES("' . $consulta['agenda'] . '", "' . $consulta['nutricionista'] . '")');
+        
+      
+        
 
-        $resultSet = $conexao->query('SELECT * FROM nutricionista WHERE dia = "' . $params['agenda'] . '" 
-                                        AND nutricionista = "' . ($params['nutricionista']) . '"')->fetchAll();
+        
     });
 };
