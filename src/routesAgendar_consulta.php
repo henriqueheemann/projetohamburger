@@ -21,18 +21,27 @@ return function (App $app) {
     });
 
     $app->post('/agendar_consulta/', function (Request $request, Response $response, array $args) use ($container) {
-        // Sample log message
+        // Sampley log message
         $container->get('logger')->info("Slim-Skeleton '/agendar_consulta/' route");
 
         $conexao = $container->get('pdo');
 
         $consulta = $_POST;
 
-        $resultSet = $conexao->query ('INSERT INTO usuario (dia,nomeNutri) VALUES("' . $consulta['agenda'] . '", "' . $consulta['nutricionista'] . '")');
-        
-      
-        
+    include_once('dependencies.php');
 
+    $dia= $_POST['dia'];
+    $nomeNutri= $_POST['nomeNutri'];
+    $preco= $_POST['preco'];
+
+        $resultSet = $conexao->query ("INSERT INTO nutricionista (dia,nomeNutri,preco) 
         
+                                    VALUES('$dia',
+                                    '$nomeNutri', '$preco')");
+    
+        //('INSERT INTO nutricionista STR_TO_DATE("'.$consulta['agenda'].'", "%m %d %Y")');
+
+
+        return $response->withRedirect('/login/');
     });
 };
