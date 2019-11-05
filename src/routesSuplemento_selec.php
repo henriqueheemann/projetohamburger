@@ -17,11 +17,9 @@ return function (App $app) {
         }
         $conexao = $container->get('pdo');
         
-
         $resultSet = $conexao->query('SELECT * FROM produto')->fetchAll();
 
         $args['produtos'] = $resultSet;
-
 
         // Render index view
         return $container->get('renderer')->render($response, 'suplemento_selec.phtml', $args);
