@@ -112,16 +112,38 @@
                     </a>
 =======
 
-                    <div class="card mx-auto mt-5 mb-5" style="width: 18rem;">
-                        <div class="col-4 p-1">
+                    
+                        <div class="col-12 p-3">
+                            <div class="card-body">
+                            <?php
+                           
+                           foreach ($_SESSION['produto'] as $key => $value) {
+                                echo '<div class="col-12 mt-5">';
+                                echo '<div class="row">';
+                                echo '<div class="col-4 float-left border border-0">';
+                                echo '<img src="' . $value[0]['endereçoIMG']  . '" class=img-fluid .img-thumbnail" id="imgCarrinho" alt="">';
+                                echo '</div>';
+                                echo '<div class="col-6 text-left"';                            
+                                echo '<label id="nomeProduto">' . $value[0]['nomeProduto'] . '</label>';
+                                echo '<br>';
+                                echo '<label id="descricao">' .$value[0]['descrição'] . '</label>';
+                                echo '<label id="preco">R$' . $value[0]['preco'] . '</label>'; 
+                                echo '<div class="col-1 text-right">';
+                                echo '<input type="number" id="qtd"></input>';
+                                echo '</div>';                           
+                                echo '</div>';
+                                echo '</div>';
+                                echo '</div>';
+                            }
+                            ?>
+                        </div>
 
                         </div>
-                        <div class="card-body">
-                                               
-                            <h5 class="card-title">Suplemento</h5>
-                            <p class="card-text">dex pila feio</p>
+
+                        <div>
+                        <a href="/limparcarrinho/" class="btn btn-outline-warning">Cancelar Pedido</a>
                         </div>
-                    </div>
+                        
 
 >>>>>>> 4859727a26e0b13fcf90a0406d2225dd0285297e
                 </div>

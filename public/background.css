@@ -8,3 +8,21 @@ body {
     background-color: grey;
  
 }
+
+#imgCarrinho {
+    background-color: grey;
+}
+
+
+#nomeProduto {
+    font-size: 40px;
+    color: rgb(255, 208, 0);
+}
+#descricao {
+    font-size: 23px;
+    color: grey;
+}
+#preco {
+    font-size: 40px;
+    color: rgb(255, 208, 0);
+}
