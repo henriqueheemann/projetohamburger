@@ -34,7 +34,7 @@ return function (App $app) {
         $idade = $_POST['idade'];
         $sexo = $_POST['sexo'];
         $mensalidade = $_POST['mensalidade'];
-        
+
         $resultSet = $conexao->query ("INSERT INTO usuario (nome, email, senha, cidade, numeroCasa, cep, complemento, idade, sexo, mensalidade) 
                                     VALUES ('$nome', 
                                             '$email', 
