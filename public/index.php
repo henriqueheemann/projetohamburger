@@ -62,8 +62,5 @@ $routes($app);
 $routes = require __DIR__ . '/../src/routesCriar_conta.php';
 $routes($app);
 
-$routes = require __DIR__ . '/../src/routesConta_nova.php';
-$routes($app);
-
 // Run app
 $app->run();
