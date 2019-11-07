@@ -16,6 +16,11 @@
 
 <body>
 
+
+</head>
+
+<body>
+
     <form action="/criar_conta/" method="post">
         <div class="container">
             <div class="text-center m-5">
@@ -27,7 +32,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Nome completo</span>
                         </div>
-                        <input type="text" name="nome" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="text" name="nome" class="form-control" id="validationCustom01" required>
                     </div>
                 </div>
                 <div class="row">
@@ -35,7 +40,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">E-mail</span>
                         </div>
-                        <input type="text" name="email" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="email" name="email" class="form-control" id="validationCustom01" required>
                     </div>
                 </div>
                 <div class="row">
@@ -43,15 +48,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Senha</span>
                         </div>
-                        <input type="password" name="senha" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon1">Confirmar senha</span>
-                        </div>
-                        <input type="password" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="password" name="senha" class="form-control" id="validationCustom01" required>
                     </div>
                 </div>
                 <div class="row">
@@ -59,15 +56,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Cidade</span>
                         </div>
-                        <input type="text" name="cidade" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon1">Nº da casa</span>
-                        </div>
-                        <input type="text" name="numeroCasa" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="text" name="cidade" class="form-control" id="validationCustom01" required>
                     </div>
                 </div>
                 <div class="row">
@@ -75,7 +64,15 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">CEP</span>
                         </div>
-                        <input type="number" name="cep" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="number" name="cep" class="form-control" id="validationCustom01" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Nº da casa</span>
+                        </div>
+                        <input type="number" name="numeroCasa" class="form-control" id="validationCustom01" required>
                     </div>
                 </div>
                 <div class="row">
@@ -83,7 +80,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Complemento</span>
                         </div>
-                        <input type="text" name="complemento" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="text" name="complemento" class="form-control" id="validationCustom01" required>
                     </div>
                 </div>
                 <div class="row">
@@ -91,7 +88,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Idade</span>
                         </div>
-                        <input type="number" name="idade" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="number" name="idade" class="form-control" id="validationCustom01" required>
                     </div>
                 </div>
                 <div class="row">
@@ -100,11 +97,11 @@
                             <span class="input-group-text label" id="basic-addon1">Sexo</span>
                             <span class="input-group-text ml-1 label" id="basic-addon1">Masculino</span>
                             <div class="input-group-text radio">
-                                <input type="radio" name="sexo" value="Masculino" aria-label="Radio button for following text input">
+                                <input type="radio" name="sexo" value="Masculino" id="customControlValidation2" required>
                             </div>
                             <span class="input-group-text ml-1 label" id="basic-addon1">Feminino</span>
                             <div class="input-group-text radio">
-                                <input type="radio" name="sexo" value="Feminino" aria-label="Radio button for following text input">
+                                <input type="radio" name="sexo" value="Feminino" id="customControlValidation3" required.>
                             </div>
                         </div>
                     </div>

@@ -13,12 +13,20 @@ return function (App $app) {
         $container->get('logger')->info("Slim-Skeleton '/suplemento/' route");
 
 
+
         $conexao = $container->get('pdo');
+
+
+        if ($_SESSION['login']['ehLogado'] != true) {
+            return $response->withRedirect('/login/');
+            exit;
+        }
+        $conexao = $container->get('pdo');
+        
 
         $resultSet = $conexao->query('SELECT * FROM produto')->fetchAll();
 
         $args['produtos'] = $resultSet;
-
 
 
         // Render index view
