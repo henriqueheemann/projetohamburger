@@ -33,17 +33,15 @@ return function (App $app) {
         $numeroCasa = $_POST['numeroCasa'];
         $cep = $_POST['cep'];
         $complemento = $_POST['complemento'];
-        $mensalidade = $_POST['mensalidade'];
 
-        $resultSet = $conexao->query ("INSERT INTO usuario (nome, email, senha, cidade, numeroCasa, cep, complemento, mensalidade) 
+        $resultSet = $conexao->query ("INSERT INTO usuario (nome, email, senha, cidade, numeroCasa, cep, complemento) 
                                     VALUES ('$nome', 
                                     '$email', 
                                     '$senha', 
                                     '$cidade', 
                                     '$numeroCasa', 
                                     '$cep', 
-                                    '$complemento', 
-                                    '$mensalidade')");
+                                    '$complemento')");
 
 
         return $response->withRedirect('/login/');

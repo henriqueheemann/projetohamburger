@@ -11,11 +11,6 @@ return function (App $app) {
         // Sample log message
         $container->get('logger')->info("Slim-Skeleton '/agendar_consulta/' route");
 
-        if ($_SESSION['login']['ehLogado'] != true) {
-            return $response->withRedirect('/login/');
-            exit;
-        }
-
         // Render index view
         return $container->get('renderer')->render($response, 'agendar_consulta.phtml', $args);
     });
@@ -28,18 +23,11 @@ return function (App $app) {
 
         $consulta = $_POST;
 
-    include_once('dependencies.php');
+        $dia = $_POST['agenda'];
+        $nomeNutri = $_POST['nomeNutri'];
+        $preco = $_POST['preco'];
 
-    $dia= $_POST['dia'];
-    $nomeNutri= $_POST['nomeNutri'];
-    $preco= $_POST['preco'];
-
-        $resultSet = $conexao->query ("INSERT INTO nutricionista (dia,nomeNutri,preco) 
-        
-                                    VALUES('$dia',
-                                    '$nomeNutri', '$preco')");
-    
-        //('INSERT INTO nutricionista STR_TO_DATE("'.$consulta['agenda'].'", "%m %d %Y")');
+        $resultSet = $conexao->query('INSERT INTO nutricionista (dia, nomeNutri, preco) VALUES (DATE_FORMAT(STR_TO_DATE("'.$dia.'", "%d/%m/%Y"), "%Y/%m/%d"), "'.$nomeNutri.'", "'.$preco.'")');
 
 
         return $response->withRedirect('/login/');
