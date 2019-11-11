@@ -26,4 +26,27 @@ return function (App $app) {
         return $container->get('renderer')->render($response, 'financeiro.phtml', $args);
     });
 
+    $app->get('/financeiroSoma/', function (Request $request, Response $response, array $args) use ($container) {
+        // Sample log message
+        $container->get('logger')->info("Slim-Skeleton '/financeiro/' route");
+
+        $conexao = $container->get('pdo');
+
+        $_SESSION['mensalidade'];
+
+        $totalSoma = 0;
+
+        foreach ($_SESSION['produto'] as $valorTotal) {
+        $totalSoma += $valorTotal[0]['preco'];
+
+        }
+       
+        $args['totalSoma'] = $totalSoma;
+
+        $_SESSION['produto']['valor_total'] = $totalSoma + $_SESSION['mensalidade'];
+
+        // Render index view
+        return $container->get('renderer')->render($response, 'financeiro.phtml', $args);
+    });
+
 };
