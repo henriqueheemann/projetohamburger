@@ -26,7 +26,7 @@ return function (App $app) {
         include_once('dependencies.php');
         $nome = $_POST['nome'];
         $email = $_POST['email'];
-        $senha = md5($_POST['senha']);
+        $senha = $_POST['senha'];
         $cidade = $_POST['cidade'];
         $numeroCasa = $_POST['numeroCasa'];
         $cep = $_POST['cep'];
@@ -47,7 +47,9 @@ return function (App $app) {
                                             '$sexo',
                                             '$mensalidade')");
 
+
                                             $_SESSION['mensalidade'] = $mensalidade;
+
 
         return $response->withRedirect('/login/');
     });
