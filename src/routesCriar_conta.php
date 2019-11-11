@@ -46,10 +46,7 @@ return function (App $app) {
                                             '$idade',
                                             '$sexo',
                                             '$mensalidade')");
-
-
-
-
+                                            
         return $response->withRedirect('/login/');
     });
 };

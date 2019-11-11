@@ -30,16 +30,13 @@ return function (App $app) {
         if (count($resultSet) == 1) {
             $_SESSION['login']['ehLogado'] = true;
             $_SESSION['login']['nome'] = $resultSet[0]['nome'];
-            $_SESSION['login']['mensalidade'] = $resultSet[0]['mensalidade'];
-            
-            
+            $_SESSION['login']['mensalidade'] = $resultSet[0]['mensalidade'];            
             return $response->withRedirect('/inicio/');
         } else {
             $_SESSION['login']['ehLogado'] = false;
 
             return $response->withRedirect('/login/fail');
         }
-
     });
 
     $app->get('/sair/', function (Request $request, Response $response, array $args) use ($container) {
