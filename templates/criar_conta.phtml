@@ -9,9 +9,18 @@
     <link rel="stylesheet" href="../criar_conta.css">
     <link rel="shortcut icon" href="../gym.png" type="image/x-icon">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="styleBackgraund.css">
+
+
 </head>
 
 <body>
+
+
+</head>
+
+<body>
+
     <form action="/criar_conta/" method="post">
         <div class="container">
             <div class="text-center m-5">
@@ -97,6 +106,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="row">
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
@@ -110,11 +120,19 @@
                         </select>
                     </div>
                 </div>
+
+                        <select name="mensalidade">
+                            <option>Mensalidade</option>
+                            <option>250</option>
+                            <option>500</option>
+                            <option>750</option>
+                        </select>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="text-center">
-            <input type="submit" value="Enviar" class="btn btn-secondary">
-        </div>
+            <div class="text-center">
+                <input type="submit" value="Enviar" class="btn btn-secondary">
+            </div>
         </div>
     </form>
 </body>
