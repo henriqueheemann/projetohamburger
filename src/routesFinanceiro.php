@@ -32,12 +32,10 @@ return function (App $app) {
 
         $conexao = $container->get('pdo');
 
-
         $totalSoma = 0;
 
         foreach ($_SESSION['produto'] as $valorTotal) {
         $totalSoma += $valorTotal[0]['preco'];
-
         }
        
         $args['totalSoma'] = $totalSoma;
