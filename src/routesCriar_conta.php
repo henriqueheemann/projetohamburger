@@ -47,6 +47,8 @@ return function (App $app) {
                                             '$sexo',
                                             '$mensalidade')");
 
+                                            $_SESSION['mensalidade'] = $mensalidade;
+
         return $response->withRedirect('/login/');
     });
 };
