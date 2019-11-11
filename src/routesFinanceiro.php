@@ -12,16 +12,16 @@ return function (App $app) {
         $container->get('logger')->info("Slim-Skeleton '/financeiro/' route");
 
         if ($_SESSION['login']['ehLogado'] != true) {
+            
             return $response->withRedirect('/login/');
             exit;
         }
-        
         $conexao = $container->get('pdo');
 
         $resultSet = $conexao->query('SELECT * FROM usuario WHERE email = "email"')->fetchAll();
 
         $args['nome'] = $resultSet;
-
+        $args['mensalidade'] = $resultSet;
         // Render index view
         return $container->get('renderer')->render($response, 'financeiro.phtml', $args);
     });
@@ -32,7 +32,6 @@ return function (App $app) {
 
         $conexao = $container->get('pdo');
 
-        $_SESSION['mensalidade'];
 
         $totalSoma = 0;
 
@@ -43,7 +42,7 @@ return function (App $app) {
        
         $args['totalSoma'] = $totalSoma;
 
-        $_SESSION['produto']['valor_total'] = $totalSoma + $_SESSION['mensalidade'];
+        $_SESSION['produto']['valor_total'] = $totalSoma +$_SESSION['login']['mensalidade'] + $_SESSION['precoConsulta'];
 
         // Render index view
         return $container->get('renderer')->render($response, 'financeiro.phtml', $args);

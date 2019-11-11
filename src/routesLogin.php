@@ -30,6 +30,8 @@ return function (App $app) {
         if (count($resultSet) == 1) {
             $_SESSION['login']['ehLogado'] = true;
             $_SESSION['login']['nome'] = $resultSet[0]['nome'];
+            $_SESSION['login']['mensalidade'] = $resultSet[0]['mensalidade'];
+            
             
             return $response->withRedirect('/inicio/');
         } else {
