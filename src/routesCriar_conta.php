@@ -48,6 +48,8 @@ return function (App $app) {
                                             '$mensalidade')");
 
 
+
+
         return $response->withRedirect('/login/');
     });
 };

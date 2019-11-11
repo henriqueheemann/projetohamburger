@@ -24,12 +24,13 @@ return function (App $app) {
         $consulta = $_POST;
 
         $dia = $_POST['agenda'];
-        $nomeNutri = $_POST['nomeNutri'];
-        $preco = $_POST['preco'];
+        $medico = $_POST['medico'];
+        $valorConsulta = $_POST['valorConsulta'];
 
-        $resultSet = $conexao->query('INSERT INTO nutricionista (dia, nomeNutri, preco) VALUES (DATE_FORMAT(STR_TO_DATE("'.$dia.'", "%d/%m/%Y"), "%Y/%m/%d"), "'.$nomeNutri.'", "'.$preco.'")');
+        $resultSet = $conexao->query('INSERT INTO nutricionista (dia, medico, valorConsulta) VALUES (DATE_FORMAT(STR_TO_DATE("'.$dia.'", "%d/%m/%Y"), "%Y/%m/%d"), "'.$medico.'", "'.$valorConsulta.'")');
 
+        $_SESSION['precoConsulta'] = $valorConsulta;
 
-        return $response->withRedirect('/login/');
+        return $response->withRedirect('/inicio/');
     });
 };
