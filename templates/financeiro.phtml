@@ -72,19 +72,21 @@
                 <div class="row">
                     <div class="card col-8 col-md-3 offset-md-3 mr-1 border rounded border-black">
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Plano VIP da Academia</li>
-                            <li class="list-group-item">Personal Trainer</li>
-                            <li class="list-group-item">Whey 2Kg</li>
+                            <li class="list-group-item">Mensalidade</li>
+                            <li class="list-group-item">Consulta com Nutricionista</li>
+                            <li class="list-group-item">Suplementos</li>
                             <li class="list-group-item">Total:</li>
                         </ul>
                     </div>
                     <div class="card col-4 col-md-3 ml-1 border rounded border-black">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">R$230,00</li>
-                            <li class="list-group-item">R$170,50</li>
-                            <li class="list-group-item">R$200,00</li>
-                            <li class="list-group-item">R$600,50</li>
-                        </ul>
+                        <?php
+                        echo '<ul class="list-group list-group-flush">';
+                        echo    '<li class="list-group-item">R$' . $_SESSION['login']['mensalidade'] . ',00</li>';
+                        echo    '<li class="list-group-item">R$' . $_SESSION['precoConsulta'] . ',00</li>';
+                        echo    '<li class="list-group-item">R$' . $totalSoma . ',00</li>';
+                        echo    '<li class="list-group-item">R$' . $_SESSION['produto']['valor_total'] . ',00</li>';
+                        echo '</ul>';
+                        ?>
                     </div>
                 </div>
             </div>

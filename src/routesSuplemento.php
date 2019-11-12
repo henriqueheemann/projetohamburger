@@ -12,22 +12,11 @@ return function (App $app) {
         // Sample log message
         $container->get('logger')->info("Slim-Skeleton '/suplemento/' route");
 
-
-
-        $conexao = $container->get('pdo');
-
-
-        if ($_SESSION['login']['ehLogado'] != true) {
-            return $response->withRedirect('/login/');
-            exit;
-        }
         $conexao = $container->get('pdo');
         
-
         $resultSet = $conexao->query('SELECT * FROM produto')->fetchAll();
 
         $args['produtos'] = $resultSet;
-
 
         // Render index view
         return $container->get('renderer')->render($response, 'suplemento.phtml', $args);
@@ -59,13 +48,18 @@ return function (App $app) {
 
         return $container->get('renderer')->render($response, 'suplemento_selec.phtml', $args);
     });
+
+
+
+
+    
     $app->get('/limparcarrinho/', function (Request $request, Response $response, array $args) use ($container) {
         // Sample log message
         $container->get('logger')->info("Slim-Skeleton '/limparcarrinho/' route");
 
-        unset($_SESSION['produto']);
+          unset($_SESSION['produto']);
         
-        session_destroy();
         return $response->withRedirect('/suplemento/');
     });
+
 };

@@ -20,9 +20,14 @@ body {
 }
 #descricao {
     font-size: 23px;
-    color: grey;
+    color: white;
 }
 #preco {
     font-size: 40px;
     color: rgb(255, 208, 0);
+}
+.desafio{
+    font-size: 30px;
+    color: black;
+    background-color: grey;
 }
