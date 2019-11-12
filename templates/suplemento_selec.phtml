@@ -67,19 +67,19 @@
 
                             foreach ($_SESSION['produto'] as $key => $value) {
                                 echo '<div class="col-12 mt-5">';
-                                echo '<div class="row">';
-                                echo '<div class="col-4 float-left border border-0">';
-                                echo '<img src="' . $value[0]['endereçoIMG']  . '" class=img-fluid .img-thumbnail" id="imgCarrinho" alt="">';
-                                echo '</div>';
-                                echo '<div class="col-6 text-left"';
-                                echo '<label id="nomeProduto">' . $value[0]['nomeProduto'] . '</label>';
-                                echo '<br>';
-                                echo '<label id="descricao">' . $value[0]['descrição'] . '</label>';
-                                echo '<label id="preco">R$' . $value[0]['preco'] . '</label>';
-                                echo '<div class="col-1 text-right">';
-                                echo '</div>';
-                                echo '</div>';
-                                echo '</div>';
+                                    echo '<div class="row">';
+                                        echo '<div class="col-4 float-left border border-0">';
+                                            echo '<img src="' . $value[0]['endereçoIMG']  . '" class=img-fluid .img-thumbnail" id="imgCarrinho" alt="">';
+                                        echo '</div>';
+                                        echo '<div class="col-6 text-left"';
+                                            echo '<label id="nomeProduto">' . $value[0]['nomeProduto'] . '</label>';
+                                            echo '<br>';
+                                            echo '<label id="descricao">' . $value[0]['descrição'] . '</label>';
+                                            echo '<label id="preco">R$' . $value[0]['preco'] . '</label>';
+                                            echo '<div class="col-1 text-right">';
+                                            echo '</div>';
+                                        echo '</div>';
+                                    echo '</div>';
                                 echo '</div>';
                             }
                             ?>
