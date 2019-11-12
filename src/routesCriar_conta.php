@@ -23,7 +23,6 @@ return function (App $app) {
 
         $params = $request->getParsedBody();
 
-        include_once('dependencies.php');
         $nome = $_POST['nome'];
         $email = $_POST['email'];
         $senha = md5($_POST['senha']);
