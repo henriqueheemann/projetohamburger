@@ -61,51 +61,58 @@
             </div>
             <div class="col-12">
                 <div class="row">
-                    <div class="col-8 col-md-8 bg-white border border-secondary rounded float-left text-right">
-                        <?php
-                        foreach ($descricoes as $key => $descricao) {
-                            echo '<p>Perder 5Kg</p>';
-                            echo '<p>Levantamento de peso: 5Kg</p>';
-                            echo '<p>Correr 2Km na esteira</p>';
-                            echo '';
-                        }
-                        ?>
-                    </div>
+                    <?php
+                    foreach ($descricoes as $key => $descricao) {
+                        echo '<div class="col-12 bg-white border border-secondary rounded float-left">';
+                            echo ' <div class="col-11 float-left">';
+                                echo '<p>' . $descricao['descricaoMeta'] . '</p>';
+                            echo '</div>';
+                            echo '<div class="float-left">';
+                                echo '<div class="input-group-text rounded">';
+                                    echo '<input type="checkbox" aria-label="Checkbox for following text input">';
+                                echo '</div>';
+                            echo '</div>';
+                        echo '</div>';
+                    }
+                    ?>
+                </div>
+                <div class="row">
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text">With textarea</span>
                         </div>
                         <textarea class="form-control" name="editarMeta" aria-label="With textarea"></textarea>
                     </div>
-                    <div class="form-group">
-                        <label for="formGroupExampleInput">Example label</label>
-                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Example label</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+                </div>
+                <div class="col-4 col-md-4 float-left">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text rounded">
+                                <input type="checkbox" aria-label="Checkbox for following text input">
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-4 col-md-4 float-left">
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text rounded">
-                                    <input type="checkbox" aria-label="Checkbox for following text input">
-                                </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text rounded">
+                                <input type="checkbox" aria-label="Checkbox for following text input">
                             </div>
                         </div>
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text rounded">
-                                    <input type="checkbox" aria-label="Checkbox for following text input">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text rounded">
-                                    <input type="checkbox" aria-label="Checkbox for following text input">
-                                </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text rounded">
+                                <input type="checkbox" aria-label="Checkbox for following text input">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </form>
 </body>
