@@ -61,10 +61,25 @@
             </div>
             <div class="col-12">
                 <div class="row">
-                    <div class="col-8 col-md-8 border border-secondary rounded float-left text-right text-white">
-                        <p>Perder 5Kg</p>
-                        <p>Levantamento de peso: 5Kg</p>
-                        <p>Correr 2Km na esteira</p>
+                    <div class="col-8 col-md-8 bg-white border border-secondary rounded float-left text-right">
+                        <?php
+                        foreach ($descricoes as $key => $descricao) {
+                            echo '<p>Perder 5Kg</p>';
+                            echo '<p>Levantamento de peso: 5Kg</p>';
+                            echo '<p>Correr 2Km na esteira</p>';
+                            echo '';
+                        }
+                        ?>
+                    </div>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">With textarea</span>
+                        </div>
+                        <textarea class="form-control" name="editarMeta" aria-label="With textarea"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">Example label</label>
+                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
                     </div>
                     <div class="col-4 col-md-4 float-left">
                         <div class="input-group mb-3">

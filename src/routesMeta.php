@@ -16,6 +16,12 @@ return function (App $app) {
             exit;
         }
         
+        $conexao = $container->get('pdo');
+
+        $resultSet = $conexao->query('SELECT * FROM meta')->fetchAll();
+
+        $args['descricoes'] = $resultSet;
+
         // Render index view
         return $container->get('renderer')->render($response, 'meta.phtml', $args);
     });
