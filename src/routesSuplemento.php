@@ -56,6 +56,11 @@ return function (App $app) {
 
         return $container->get('renderer')->render($response, 'suplemento_selec.phtml', $args);
     });
+
+
+
+
+    
     $app->get('/limparcarrinho/', function (Request $request, Response $response, array $args) use ($container) {
         // Sample log message
         $container->get('logger')->info("Slim-Skeleton '/limparcarrinho/' route");
