@@ -41,8 +41,6 @@ $routes($app);
 $routes = require __DIR__ . '/../src/routesDesafio.php';
 $routes($app);
 
-
-
 $routes = require __DIR__ . '/../src/routesFinanceiro.php';
 $routes($app);
 
@@ -55,9 +53,10 @@ $routes($app);
 $routes = require __DIR__ . '/../src/routesAgendar_consulta.php';
 $routes($app);
 
-
-
 $routes = require __DIR__ . '/../src/routesCriar_conta.php';
+$routes($app);
+
+$routes = require __DIR__ . '/../src/routesMeta_selec.php';
 $routes($app);
 
 // Run app
