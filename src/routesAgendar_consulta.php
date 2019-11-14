@@ -31,6 +31,18 @@ return function (App $app) {
 
         $_SESSION['precoConsulta'] = $valorConsulta;
 
+        unset($_SESSION['consulta']);
+
         return $response->withRedirect('/inicio/');
+    });
+
+    $app->get('/limparConsulta/', function (Request $request, Response $response, array $args) use ($container) {
+        // Sample log message
+        $container->get('logger')->info("Slim-Skeleton '/limparConsulta/' route");
+
+      
+          unset($_SESSION['consulta']);
+        
+        return $response->withRedirect('/suplemento/');
     });
 };
