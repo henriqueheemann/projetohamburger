@@ -13,6 +13,36 @@
 </head>
 
 <body>
+    <?php
+    if (isset($action) && $action == "user-already-exists") {
+        echo '
+        <div class="alert alert-danger mt-5" role="alert">
+            <h4 class="alert-heading">Erro: Nome de usuário já está em uso!</h4>
+            <p class="text-center">Esse nome já foi utilizado por outro usuário, tente outro.</p>
+            <hr>
+            <p class="mb-0 text-center">Aviso: digite novamente sua senha.</p>
+        </div>
+        ';
+    } else if (isset($action) && $action == "blank-fields") {
+        echo '
+        <div class="alert alert-danger mt-5" role="alert">
+            <h4 class="alert-heading">Erro: Preencha todos os campos obrigatórios!</h4>
+            <p class="text-center">Verifique se algum campo não foi preenchido.</p>
+            <hr>
+            <p class="mb-0 text-center">Aviso: digite novamente sua senha.</p>
+        </div>
+        ';
+    } else if (isset($action) && $action == "email-not-valid") {
+        echo '
+        <div class="alert alert-danger mt-5" role="alert">
+            <h4 class="alert-heading">Erro: O email não é válido!</h4>
+            <p class="text-center">Verifique se o email foi digitado corretamente.</p>
+            <hr>
+            <p class="mb-0 text-center">Aviso: digite novamente sua senha.</p>
+        </div>
+        ';
+    }
+    ?>
     <form action="/criar_conta/" method="post">
         <div class="container">
             <div class="text-center m-5">
@@ -24,7 +54,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Nome completo</span>
                         </div>
-                        <input type="text" name="nome" class="form-control" id="validationCustom01" required>
+                        <input type="text" name="nome" class="form-control">
                     </div>
                 </div>
                 <div class="row">
@@ -32,7 +62,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">E-mail</span>
                         </div>
-                        <input type="email" name="email" class="form-control" id="validationCustom01" required>
+                        <input type="email" name="email" class="form-control">
                     </div>
                 </div>
                 <div class="row">
@@ -40,15 +70,28 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Senha</span>
                         </div>
-                        <input type="password" name="senha" class="form-control" id="validationCustom01" required>
+                        <input type="password" name="senha" class="form-control">
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
+                            <span class="input-group-text">Confirmar senha</span>
+                        </div>
+                        <input type="password" name="confirmarSenha" class="form-control">
+                    </div>
+                </div>
+                <?php
+                if (isset($action) && $action == "passwords-not-equal") {
+                    echo '<h5 class="alert alert-danger my-3">Erro: As senhas não batem!</h5>';
+                }
+                ?>
+                <div class="row">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Cidade</span>
                         </div>
-                        <input type="text" name="cidade" class="form-control" id="validationCustom01" required>
+                        <input type="text" name="cidade" class="form-control">
                     </div>
                 </div>
                 <div class="row">
@@ -56,7 +99,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">CEP</span>
                         </div>
-                        <input type="number" name="cep" class="form-control" id="validationCustom01" required>
+                        <input type="number" name="cep" class="form-control">
                     </div>
                 </div>
                 <div class="row">
@@ -64,7 +107,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Nº da casa</span>
                         </div>
-                        <input type="number" name="numeroCasa" class="form-control" id="validationCustom01" required>
+                        <input type="number" name="numeroCasa" class="form-control">
                     </div>
                 </div>
                 <div class="row">
@@ -72,7 +115,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Complemento</span>
                         </div>
-                        <input type="text" name="complemento" class="form-control" id="validationCustom01" required>
+                        <input type="text" name="complemento" class="form-control">
                     </div>
                 </div>
                 <div class="row">
@@ -80,7 +123,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Idade</span>
                         </div>
-                        <input type="number" name="idade" class="form-control" id="validationCustom01" required>
+                        <input type="number" name="idade" class="form-control">
                     </div>
                 </div>
                 <div class="row">
@@ -89,11 +132,11 @@
                             <span class="input-group-text label" id="basic-addon1">Sexo</span>
                             <span class="input-group-text ml-1 label" id="basic-addon1">Masculino</span>
                             <div class="input-group-text radio">
-                                <input type="radio" name="sexo" value="Masculino" id="customControlValidation2" required>
+                                <input type="radio" name="sexo" value="Masculino">
                             </div>
                             <span class="input-group-text ml-1 label" id="basic-addon1">Feminino</span>
                             <div class="input-group-text radio">
-                                <input type="radio" name="sexo" value="Feminino" id="customControlValidation3" required>
+                                <input type="radio" name="sexo" value="Feminino">
                             </div>
                         </div>
                     </div>
@@ -103,7 +146,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Mensalidade</span>
                         </div>
-                        <select class="custom-select" name="mensalidade" id="validatedCustomFile" required>
+                        <select class="custom-select" name="mensalidade">
                             <option value="">Escolha...</option>
                             <option value="250,00">R$250,00</option>
                             <option value="500,00">R$500,00</option>
