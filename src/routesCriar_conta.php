@@ -34,17 +34,46 @@ return function (App $app) {
         $sexo = $_POST['sexo'];
         $mensalidade = $_POST['mensalidade'];
 
+        $resultSet = $conexao->query('SELECT nome FROM usuario WHERE nome = "' . $params['nome'] . '"')->fetchAll();
+        
+        if ($params['nome'] == null || 
+            $params['email'] == null || 
+            $params['senha'] == null || 
+            $params['confirmarSenha'] == null || 
+            $params['cidade'] == null || 
+            $params['numeroCasa'] == null || 
+            $params['cep'] == null || 
+            $params['complemento'] == null || 
+            $params['idade'] == null || 
+            $params['sexo'] == null || 
+            $params['mensalidade'] == null || 
+            $params['nome'] == null ) {
+            return $response->withRedirect('/criar_conta/blank-fields');
+        } 
+        
+        else if ($resultSet != null) {
+            return $response->withRedirect('/criar_conta/user-already-exists');
+        }
+
+        else if ($params['senha'] != $params['confirmarSenha']) {
+            return $response->withRedirect('/criar_conta/passwords-not-equal');
+        }
+
+        else if (filter_var($params['email'], FILTER_VALIDATE_EMAIL) == false){
+            return $response->withRedirect('/criar_conta/email-not-valid');
+        }
+        
         $resultSet = $conexao->query ("INSERT INTO usuario (nome, email, senha, cidade, numeroCasa, cep, complemento, idade, sexo, mensalidade) 
-                                    VALUES ('$nome', 
-                                            '$email', 
-                                            '$senha', 
-                                            '$cidade', 
-                                            '$numeroCasa', 
-                                            '$cep', 
-                                            '$complemento', 
-                                            '$idade',
-                                            '$sexo',
-                                            '$mensalidade')");
+                                       VALUES ('$nome', 
+                                               '$email', 
+                                               '$senha', 
+                                               '$cidade', 
+                                               '$numeroCasa', 
+                                               '$cep', 
+                                               '$complemento', 
+                                               '$idade',
+                                               '$sexo',
+                                               '$mensalidade')");
                                             
         return $response->withRedirect('/login/');
     });
